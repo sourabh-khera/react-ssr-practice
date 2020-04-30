@@ -1,0 +1,1 @@
+export const SAVE_USERS_LIST = 'SAVE_USERS_LIST';

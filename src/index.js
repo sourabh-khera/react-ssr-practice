@@ -1,17 +1,21 @@
 import React from 'react';
 import { hydrate } from 'react-dom';
+import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import GetAuthStatus from './hoc/auth_context';
+import { configureStore } from './store';
 
-import './index.css';
 import App from './App';
+import './index.css';
+
+const initialState = {};
+const store = configureStore(initialState);
 
 const app = (
-    <GetAuthStatus>
+    <Provider store={store}>
         <BrowserRouter>
             <App />
         </BrowserRouter>
-    </GetAuthStatus>
+    </Provider>
 );
 
 hydrate(app, document.getElementById('root'));
