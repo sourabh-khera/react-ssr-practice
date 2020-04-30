@@ -1,0 +1,16 @@
+
+  .text_input {
+    background-color: white;
+    opacity: 0.7;
+    border-radius: 5px;
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    
+  }
+
+  input[type=text] {
+    padding-left: 10px;  
+  }
