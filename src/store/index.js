@@ -1,12 +1,14 @@
 import { createStore, applyMiddleware } from 'redux';
-import reducer from '../reducer';
+import userReducer from '../reducer';
 import { composeWithDevTools as compose } from 'redux-devtools-extension';
-import middleware from '../middleware';
+import middlewares from '../middleware';
 
-export const configureStore = (initialState={}) => {
-  createStore(
+const configureStore = (initialState = {}) => {
+  return createStore(
+    userReducer,
     initialState,
-    reducer,
-    compose(applyMiddleware(...middleware))  
-  )
+    compose(applyMiddleware(...middlewares)),
+  );
 }
+
+export default configureStore;

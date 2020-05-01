@@ -1,6 +1,8 @@
 import React , { Component } from 'react';
 import TextInput from '../components/Text_Input/Text_Input';
 import LoginButton from '../components/Button/Button';
+import { getUsers } from '../action/async.action';
+
 import classes from './Login.css';
 
 class Login extends Component {
@@ -22,4 +24,7 @@ class Login extends Component {
   }
 }
 
+Login.need = {
+  fetchUsers: (store) => store.dispatch(getUsers()),
+}
 export default Login;

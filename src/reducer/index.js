@@ -1,16 +1,18 @@
 import { SAVE_USERS_LIST } from '../action/actionTypes';
 
 const initialState = {
-  users: [],
+  usersList: [],
+};
+
+const saveUsers = (state, { users }) => ({ ...state, usersList: users });
+
+const userReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case SAVE_USERS_LIST:
+      return saveUsers(state, action);
+   
+    default: return state;
+  }
 }
 
-const reducer = (state=initialState, action) => {
-  switch(action.type){
-    case SAVE_USERS_LIST:
-      return {...state, users: action.users}
-    default
-      return state  
-  }
-} 
-
-export default reducer;
+export default userReducer;
