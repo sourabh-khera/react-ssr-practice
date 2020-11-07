@@ -1,0 +1,7 @@
+{
+  "quiet": true,
+  "watch": [
+    "src/server"
+  ],
+  "exec": "npm run build:dev && node dist/server_bundle.js"
+}
