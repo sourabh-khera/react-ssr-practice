@@ -26,7 +26,6 @@ if (process.env.NODE_ENV === "development") {
   const webpack = require("webpack");
   const webpackConfig = require("../../webpack.config");
   const devBrowserConfig = webpackConfig[0];
-  console.log(devBrowserConfig, "config----");
   const compiler = webpack(devBrowserConfig);
   app.use(
     webpackDevMiddleware(compiler, {
